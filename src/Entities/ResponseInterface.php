@@ -7,7 +7,6 @@ use MailMarketing\MailMarketingException;
 
 interface ResponseInterface
 {
-
     /**
      * Initialise response
      *

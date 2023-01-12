@@ -7,7 +7,6 @@ use MailMarketing\Drivers\MailChimp;
 
 class MailchimpDriverTest extends TestCase
 {
-
     /** @test */
     public function key_is_required()
     {

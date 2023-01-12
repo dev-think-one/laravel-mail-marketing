@@ -10,7 +10,6 @@ use MailMarketing\Drivers\MailMarketingInterface;
 
 class MailMarketingManager
 {
-
     /**
      * The application instance.
      */

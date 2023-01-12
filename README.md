@@ -1,5 +1,12 @@
 # Laravel: mail marketing
 
+![Packagist License](https://img.shields.io/packagist/l/yaroslawww/laravel-mail-marketing?color=%234dc71f)
+[![Packagist Version](https://img.shields.io/packagist/v/yaroslawww/laravel-mail-marketing)](https://packagist.org/packages/yaroslawww/laravel-mail-marketing)
+[![Total Downloads](https://img.shields.io/packagist/dt/yaroslawww/laravel-mail-marketing)](https://packagist.org/packages/yaroslawww/laravel-mail-marketing)
+[![Build Status](https://scrutinizer-ci.com/g/yaroslawww/laravel-mail-marketing/badges/build.png?b=master)](https://scrutinizer-ci.com/g/yaroslawww/laravel-mail-marketing/build-status/master)
+[![Code Coverage](https://scrutinizer-ci.com/g/yaroslawww/laravel-mail-marketing/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/yaroslawww/laravel-mail-marketing/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yaroslawww/laravel-mail-marketing/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yaroslawww/laravel-mail-marketing/?branch=master)
+
 Simple application layer where you can quickly change your mail marketing service
 
 ## Services

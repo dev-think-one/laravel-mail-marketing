@@ -8,7 +8,6 @@ use MailMarketing\Facades\MailMarketing;
 
 class MailMarketingManagerTest extends TestCase
 {
-
     /** @test */
     public function has_default_driver()
     {

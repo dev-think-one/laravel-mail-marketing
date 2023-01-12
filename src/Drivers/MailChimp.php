@@ -20,7 +20,7 @@ class MailChimp implements MailMarketingInterface
 
     public function __construct(array $config)
     {
-        if (! ($config['key'] ?? false)) {
+        if (!($config['key'] ?? false)) {
             throw new \InvalidArgumentException('MailChimp API key not present');
         }
 
@@ -45,11 +45,11 @@ class MailChimp implements MailMarketingInterface
     {
         $config = array_merge(Arr::get($this->config, 'list'), $data);
         $params = [
-            'name' => $name,
-            'contact' => Arr::get($config, 'contact'),
+            'name'                => $name,
+            'contact'             => Arr::get($config, 'contact'),
             'permission_reminder' => Arr::get($config, 'permission_reminder'),
-            'campaign_defaults' => Arr::get($config, 'campaign_defaults'),
-            'email_type_option' => Arr::get($config, 'email_type_option'),
+            'campaign_defaults'   => Arr::get($config, 'campaign_defaults'),
+            'email_type_option'   => Arr::get($config, 'email_type_option'),
         ];
 
         return MailchimpResponse::init($this->client->post('lists', $params));
@@ -68,13 +68,13 @@ class MailChimp implements MailMarketingInterface
                 $listId . '__' . Arr::get($member, 'id'),
                 "lists/$listId/members/" . $this->client::subscriberHash($email),
                 [
-                    'email_address' => $email,
-                    'status' => 'subscribed',
+                    'email_address'         => $email,
+                    'status'                => 'subscribed',
                     'skip_merge_validation' => true,
-                    'merge_fields' => [
-                        'FNAME' => Arr::get($member, 'first_name', ''),
-                        'LNAME' => Arr::get($member, 'last_name', ''),
-                        'PHONE' => Arr::get($member, 'phone', ''),
+                    'merge_fields'          => [
+                        'FNAME'   => Arr::get($member, 'first_name', ''),
+                        'LNAME'   => Arr::get($member, 'last_name', ''),
+                        'PHONE'   => Arr::get($member, 'phone', ''),
                         'ADDRESS' => Arr::get($member, 'address', ''),
                     ],
                 ]
@@ -90,20 +90,20 @@ class MailChimp implements MailMarketingInterface
     public function addMemberToList($listId, $member, array $data = []): ResponseInterface
     {
         $email = Arr::get($member, 'email');
-        if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw new MailMarketingException("Email '{$email}' not valid");
         }
         $response = $this->client->put(
             "lists/$listId/members/" . $this->client::subscriberHash($email),
             [
-                'email_address' => $email,
-                'status_if_new' => 'subscribed',
-                'status' => 'subscribed',
+                'email_address'         => $email,
+                'status_if_new'         => 'subscribed',
+                'status'                => 'subscribed',
                 'skip_merge_validation' => false,
-                'merge_fields' => [
-                    'FNAME' => Arr::get($member, 'first_name', ''),
-                    'LNAME' => Arr::get($member, 'last_name', ''),
-                    'PHONE' => Arr::get($member, 'phone', ''),
+                'merge_fields'          => [
+                    'FNAME'   => Arr::get($member, 'first_name', ''),
+                    'LNAME'   => Arr::get($member, 'last_name', ''),
+                    'PHONE'   => Arr::get($member, 'phone', ''),
                     'ADDRESS' => Arr::get($member, 'address', ''),
                 ],
             ]
@@ -118,19 +118,19 @@ class MailChimp implements MailMarketingInterface
     public function removeMemberFromList($listId, $member, array $data = []): ResponseInterface
     {
         $email = Arr::get($member, 'email');
-        if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw new MailMarketingException("Email '{$email}' not valid");
         }
         $response = $this->client->patch(
             "lists/$listId/members/" . $this->client::subscriberHash($email),
             [
-                'email_address' => $email,
-                'status' => 'unsubscribed',
+                'email_address'         => $email,
+                'status'                => 'unsubscribed',
                 'skip_merge_validation' => false,
-                'merge_fields' => [
-                    'FNAME' => Arr::get($member, 'first_name', ''),
-                    'LNAME' => Arr::get($member, 'last_name', ''),
-                    'PHONE' => Arr::get($member, 'phone', ''),
+                'merge_fields'          => [
+                    'FNAME'   => Arr::get($member, 'first_name', ''),
+                    'LNAME'   => Arr::get($member, 'last_name', ''),
+                    'PHONE'   => Arr::get($member, 'phone', ''),
                     'ADDRESS' => Arr::get($member, 'address', ''),
                 ],
             ]
@@ -195,7 +195,7 @@ class MailChimp implements MailMarketingInterface
             // ['tag1' => true, 'tag2' => false, 'tag3' => true]
             if (is_string($key) && is_bool($tag)) {
                 return [
-                    'name' => $key,
+                    'name'   => $key,
                     'status' => $tag ? 'active' : 'inactive',
                 ];
             }
@@ -203,7 +203,7 @@ class MailChimp implements MailMarketingInterface
             // ['tag1', 'tag2', 'tag3']
             if (is_string($tag)) {
                 return [
-                    'name' => $tag,
+                    'name'   => $tag,
                     'status' => 'active',
                 ];
             }

@@ -20,7 +20,7 @@ class MailchimpResponse implements ResponseInterface
                 'status' => $response,
             ];
         }
-        if (! is_array($response)) {
+        if (!is_array($response)) {
             throw new MailMarketingException('Mailchimp response not array: ' . print_r($response, true));
         }
 
@@ -35,10 +35,7 @@ class MailchimpResponse implements ResponseInterface
         return $this->getResponse();
     }
 
-    /**
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
         return (string) print_r($this->toArray(), 1);
     }
@@ -60,7 +57,7 @@ class MailchimpResponse implements ResponseInterface
             return Arr::get($this->response, 'status');
         }
 
-        return ! (Arr::has($this->response, 'status') && Arr::has($this->response, 'instance'));
+        return !(Arr::has($this->response, 'status') && Arr::has($this->response, 'instance'));
     }
 
     /**
@@ -92,7 +89,7 @@ class MailchimpResponse implements ResponseInterface
      */
     public function get($key = null, $default = null)
     {
-        if (! is_null($key)) {
+        if (!is_null($key)) {
             return Arr::get($this->getResponse(), $key, $default);
         }
 

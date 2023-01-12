@@ -8,7 +8,6 @@ use MailMarketing\MailMarketingException;
 
 class MailchimpResponseTest extends TestCase
 {
-
     /** @test */
     public function response_array()
     {
@@ -20,7 +19,7 @@ class MailchimpResponseTest extends TestCase
 
         $response = MailchimpResponse::init([
             'status' => false,
-            'title' => 'RequestError',
+            'title'  => 'RequestError',
             'errors' => [
                 [ 'message' => 'Some error' ],
             ],
@@ -54,7 +53,7 @@ class MailchimpResponseTest extends TestCase
 
         $response = MailchimpResponse::init([
             'status' => false,
-            'title' => 'RequestError',
+            'title'  => 'RequestError',
             'errors' => [
                 [ 'message' => 'Some error' ],
             ],
