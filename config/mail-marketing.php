@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'default'                   => 'mailchimp',
+    'default'        => 'mailchimp',
 
-    'mailchimp'                 => [
+    'mailchimp'      => [
         'key'  => env('MAILCHIMP_API_KEY'),
         'list' => [
             'contact'             => [
@@ -25,5 +25,9 @@ return [
                 'language'   => 'en',
             ],
         ],
+    ],
+
+    'marketing_jobs' => [
+        'envs' => ['production'],
     ],
 ];
