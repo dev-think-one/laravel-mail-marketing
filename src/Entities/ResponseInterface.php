@@ -15,7 +15,7 @@ interface ResponseInterface
      * @return static
      * @throws MailMarketingException
      */
-    public static function init($data): self;
+    public static function init($data): static;
 
     /**
      * @return mixed

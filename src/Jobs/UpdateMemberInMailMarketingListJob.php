@@ -85,7 +85,7 @@ class UpdateMemberInMailMarketingListJob implements ShouldQueue
         );
     }
 
-    protected function driver(): MailMarketingInterface
+    public function driver(): MailMarketingInterface
     {
         return MailMarketing::driver($this->driver);
     }

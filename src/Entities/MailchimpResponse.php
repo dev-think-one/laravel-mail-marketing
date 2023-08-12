@@ -37,15 +37,15 @@ class MailchimpResponse implements ResponseInterface
 
     public function __toString(): string
     {
-        return (string) print_r($this->toArray(), 1);
+        return (string) print_r($this->toArray(), true);
     }
 
     /**
      * @inheritDoc
      */
-    public static function init($data): self
+    public static function init($data): static
     {
-        return new self($data);
+        return new static($data);
     }
 
     /**

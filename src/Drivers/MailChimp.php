@@ -30,6 +30,13 @@ class MailChimp implements MailMarketingInterface
         $this->config = $config;
     }
 
+    public function setClient(\DrewM\MailChimp\MailChimp $client): static
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
     /**
      * @inheritDoc
      */

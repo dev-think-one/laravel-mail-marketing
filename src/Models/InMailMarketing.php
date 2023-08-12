@@ -7,7 +7,7 @@ use MailMarketing\Jobs\UpdateMemberInMailMarketingListJob;
 
 trait InMailMarketing
 {
-    protected function mailMarketingMemberData(): array
+    public function mailMarketingMemberData(): array
     {
         return $this->only([
             'email',

@@ -21,6 +21,13 @@ class MailMarketingManager
     protected array $services = [];
 
     /**
+     * The registered custom driver creators.
+     *
+     * @var array
+     */
+    protected array $customCreators = [];
+
+    /**
      * Create a new Mail marketing manager instance.
      * @param Application $app
      */
@@ -29,16 +36,11 @@ class MailMarketingManager
         $this->app = $app;
     }
 
-    /**
-     * Dynamically call the default driver instance.
-     *
-     * @param string $method
-     * @param array $parameters
-     * @return mixed
-     */
-    public function __call($method, $parameters)
+    public function extend($driver, \Closure $callback)
     {
-        return $this->service()->$method(...$parameters);
+        $this->customCreators[$driver] = $callback->bindTo($this, $this);
+
+        return $this;
     }
 
     public function getDefaultDriver()
@@ -96,6 +98,10 @@ class MailMarketingManager
             throw new InvalidArgumentException("Mail Marketing service [{$name}] is not defined.");
         }
 
+        if (isset($this->customCreators[$name])) {
+            return $this->callCustomCreator($name, $config);
+        }
+
         $driverMethod = 'create' . ucfirst($name) . 'Driver';
 
         if (method_exists($this, $driverMethod)) {
@@ -105,8 +111,31 @@ class MailMarketingManager
         throw new InvalidArgumentException("Driver [{$name}] is not supported.");
     }
 
+    /**
+     * Call a custom driver creator.
+     *
+     * @param  array  $config
+     * @return mixed
+     */
+    protected function callCustomCreator(string $name, array $config): MailMarketingInterface
+    {
+        return $this->customCreators[$name]($this->app, $config);
+    }
+
     protected function createMailchimpDriver(array $config): MailChimp
     {
         return new MailChimp($config);
+    }
+
+    /**
+     * Dynamically call the default driver instance.
+     *
+     * @param string $method
+     * @param array $parameters
+     * @return mixed
+     */
+    public function __call($method, $parameters)
+    {
+        return $this->service()->$method(...$parameters);
     }
 }

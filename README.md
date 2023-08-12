@@ -41,8 +41,8 @@ AILCHIMP_API_KEY=101....yj6-us15
 
 ## Usage
 
-```injectablephp
-MailMarketing::driver()
+```php
+\MailMarketing\Facades\MailMarketing::driver()
             ->addMembersToList(
                 $this->listId,
                 $this->members
