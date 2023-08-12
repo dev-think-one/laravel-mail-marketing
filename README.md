@@ -1,11 +1,11 @@
 # Laravel: mail marketing
 
-![Packagist License](https://img.shields.io/packagist/l/yaroslawww/laravel-mail-marketing?color=%234dc71f)
-[![Packagist Version](https://img.shields.io/packagist/v/yaroslawww/laravel-mail-marketing)](https://packagist.org/packages/yaroslawww/laravel-mail-marketing)
-[![Total Downloads](https://img.shields.io/packagist/dt/yaroslawww/laravel-mail-marketing)](https://packagist.org/packages/yaroslawww/laravel-mail-marketing)
-[![Build Status](https://scrutinizer-ci.com/g/yaroslawww/laravel-mail-marketing/badges/build.png?b=master)](https://scrutinizer-ci.com/g/yaroslawww/laravel-mail-marketing/build-status/master)
-[![Code Coverage](https://scrutinizer-ci.com/g/yaroslawww/laravel-mail-marketing/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/yaroslawww/laravel-mail-marketing/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yaroslawww/laravel-mail-marketing/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yaroslawww/laravel-mail-marketing/?branch=master)
+![Packagist License](https://img.shields.io/packagist/l/think.studio/laravel-mail-marketing?color=%234dc71f)
+[![Packagist Version](https://img.shields.io/packagist/v/think.studio/laravel-mail-marketing)](https://packagist.org/packages/think.studio/laravel-mail-marketing)
+[![Total Downloads](https://img.shields.io/packagist/dt/think.studio/laravel-mail-marketing)](https://packagist.org/packages/think.studio/laravel-mail-marketing)
+[![Build Status](https://scrutinizer-ci.com/g/dev-think-one/laravel-mail-marketing/badges/build.png?b=main)](https://scrutinizer-ci.com/g/dev-think-one/laravel-mail-marketing/build-status/main)
+[![Code Coverage](https://scrutinizer-ci.com/g/dev-think-one/laravel-mail-marketing/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/dev-think-one/laravel-mail-marketing/?branch=main)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dev-think-one/laravel-mail-marketing/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/dev-think-one/laravel-mail-marketing/?branch=main)
 
 Simple application layer where you can quickly change your mail marketing service
 
@@ -18,7 +18,7 @@ Simple application layer where you can quickly change your mail marketing servic
 Install the package via composer:
 
 ```bash
-composer require yaroslawww/laravel-mail-marketing
+composer require think.studio/laravel-mail-marketing
 ```
 
 If you use mailchimp than you need also install mailchimp package
@@ -36,7 +36,7 @@ php artisan vendor:publish --provider="MailMarketing\ServiceProvider" --tag="con
 Configuration in *.env* (optional)
 
 ```dotenv
-AILCHIMP_API_KEY=101....yj6-us15
+MAILCHIMP_API_KEY=101....yj6-us15
 ```
 
 ## Usage

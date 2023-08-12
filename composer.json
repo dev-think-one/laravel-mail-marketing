@@ -1,5 +1,5 @@
 {
-    "name": "yaroslawww/laravel-mail-marketing",
+    "name": "think.studio/laravel-mail-marketing",
     "description": "Simple application layer where you can quickly change your mail marketing service",
     "keywords": [
         "laravel",
@@ -7,12 +7,12 @@
         "mail-service",
         "laravel-mailchimp"
     ],
-    "homepage": "https://github.com/yaroslawww/laravel-mail-marketing",
+    "homepage": "https://github.com/dev-think-one/laravel-mail-marketing",
     "license": "MIT",
     "authors": [
         {
             "name": "Yaroslav Georgitsa",
-            "email": "yaroslav.georgitsa@gmail.com",
+            "email": "yg@think.studio",
             "homepage": "https://github.com/yaroslawww",
             "role": "Developer"
         }
