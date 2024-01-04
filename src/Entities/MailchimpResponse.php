@@ -37,7 +37,7 @@ class MailchimpResponse implements ResponseInterface
 
     public function __toString(): string
     {
-        return (string) print_r($this->toArray(), true);
+        return (string)print_r($this->toArray(), true);
     }
 
     /**
@@ -90,7 +90,7 @@ class MailchimpResponse implements ResponseInterface
     public function get($key = null, $default = null)
     {
         if (!is_null($key)) {
-            return Arr::get($this->getResponse(), $key, $default);
+            return Arr::get($this->getResponse(), (string)$key, $default);
         }
 
         return $this->getResponse();

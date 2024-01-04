@@ -21,10 +21,13 @@ Install the package via composer:
 composer require think.studio/laravel-mail-marketing
 ```
 
-If you use mailchimp than you need also install mailchimp package
+Also need install your driver package:
 
 ```bash
+# mailchimp
 composer require drewm/mailchimp-api
+# campaignmonitor
+composer require campaignmonitor/createsend-php
 ```
 
 You can publish the config file with:

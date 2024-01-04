@@ -9,7 +9,6 @@ use MailMarketing\Entities\ResponseInterface;
 use MailMarketing\MailMarketingException;
 
 /**
- * Class MailChimp
  * @see https://mailchimp.com/developer/api/
  */
 class MailChimp implements MailMarketingInterface
@@ -40,7 +39,7 @@ class MailChimp implements MailMarketingInterface
     /**
      * @inheritDoc
      */
-    public function client()
+    public function client(?string $type = null)
     {
         return $this->client;
     }

@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'default'        => 'mailchimp',
+    'default' => 'mailchimp',
 
-    'mailchimp'      => [
+    'mailchimp' => [
         'key'  => env('MAILCHIMP_API_KEY'),
         'list' => [
-            'contact'             => [
+            'contact' => [
                 'company'  => 'MyCompany',
                 'address1' => '',
                 'address2' => '',
@@ -24,6 +24,17 @@ return [
                 'subject'    => '',
                 'language'   => 'en',
             ],
+        ],
+    ],
+
+    'campaignmonitor' => [
+        'key'       => env('CAMPAIGNMONITOR_API_KEY'),
+        'client_id' => env('CAMPAIGNMONITOR_CLIENT_ID'),
+        'list'      => [
+            'UnsubscribePage'         => env('APP_URL', 'http://localhost') . '/unsubscribed',
+            'UnsubscribeSetting'      => 'AllClientLists',
+            'ConfirmedOptIn'          => false,
+            'ConfirmationSuccessPage' => env('APP_URL', 'http://localhost') . '/joined',
         ],
     ],
 

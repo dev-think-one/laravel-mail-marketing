@@ -36,10 +36,10 @@ interface ResponseInterface
 
     /**
      * Value or full response
-     * @param null $key
+     * @param string|null $key
      * @param null $default
      *
-     * @return mixed|array
+     * @return mixed|array|string
      */
     public function get($key = null, $default = null);
 }

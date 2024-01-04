@@ -5,6 +5,7 @@ namespace MailMarketing;
 
 use Illuminate\Contracts\Foundation\Application;
 use InvalidArgumentException;
+use MailMarketing\Drivers\CampaignMonitor;
 use MailMarketing\Drivers\MailChimp;
 use MailMarketing\Drivers\MailMarketingInterface;
 
@@ -108,7 +109,7 @@ class MailMarketingManager
             return $this->{$driverMethod}($config);
         }
 
-        throw new InvalidArgumentException("Driver [{$name}] is not supported.");
+        throw new InvalidArgumentException("Driver [{$name}] is not supported. [{$driverMethod}]");
     }
 
     /**
@@ -125,6 +126,11 @@ class MailMarketingManager
     protected function createMailchimpDriver(array $config): MailChimp
     {
         return new MailChimp($config);
+    }
+
+    protected function createCampaignmonitorDriver(array $config): CampaignMonitor
+    {
+        return new CampaignMonitor($config);
     }
 
     /**

@@ -11,7 +11,7 @@ interface MailMarketingInterface
     /**
      * @return mixed
      */
-    public function client();
+    public function client(?string $type = null);
 
     /**
      * Create New list
