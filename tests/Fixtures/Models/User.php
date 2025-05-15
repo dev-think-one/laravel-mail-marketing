@@ -11,9 +11,9 @@ class User extends \Illuminate\Foundation\Auth\User
     use HasFactory;
     use InMailMarketing;
 
-    protected string $table = 'users';
+    protected $table = 'users';
 
-    protected array $guarded = [];
+    protected $guarded = [];
 
     protected static function newFactory(): UserFactory
     {

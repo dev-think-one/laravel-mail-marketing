@@ -39,7 +39,7 @@ class MailChimp implements MailMarketingInterface
     /**
      * @inheritDoc
      */
-    public function client(?string $type = null)
+    public function client(?string $type = null): mixed
     {
         return $this->client;
     }
@@ -49,7 +49,12 @@ class MailChimp implements MailMarketingInterface
      */
     public function addList(string $name, array $data = []): ResponseInterface
     {
-        $config = array_merge(Arr::get($this->config, 'list'), $data);
+        $listConfig = Arr::get($this->config, 'list', []);
+        if (!is_array($listConfig)) {
+            $listConfig = [];
+        }
+        
+        $config = array_merge($listConfig, $data);
         $params = [
             'name'                => $name,
             'contact'             => Arr::get($config, 'contact'),

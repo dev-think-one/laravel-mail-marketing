@@ -36,7 +36,7 @@ class CampaignMonitorResponse implements ResponseInterface
         return is_string($response) ? $response : '';
     }
 
-    public function get($key = null, $default = null)
+    public function get(?string $key = null, mixed $default = null): mixed
     {
         $formattedResponse = json_decode(json_encode($this->response->response), true);
         if (!is_null($key)) {

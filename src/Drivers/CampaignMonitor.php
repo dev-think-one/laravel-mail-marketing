@@ -45,7 +45,7 @@ class CampaignMonitor implements MailMarketingInterface
     /**
      * @inheritDoc
      */
-    public function client(?string $type = null)
+    public function client(?string $type = null): mixed
     {
         return $this->makeClient($type);
     }
@@ -59,7 +59,13 @@ class CampaignMonitor implements MailMarketingInterface
         if (!$client) {
             throw new \InvalidArgumentException('Client is required.');
         }
-        $config = array_merge(Arr::get($this->config, 'list'), $data, ['Title' => $name]);
+        
+        $listConfig = Arr::get($this->config, 'list', []);
+        if (!is_array($listConfig)) {
+            $listConfig = [];
+        }
+        
+        $config = array_merge($listConfig, $data, ['Title' => $name]);
 
 
         return CampaignMonitorResponse::init($this->client('lists')->create($client, $config));

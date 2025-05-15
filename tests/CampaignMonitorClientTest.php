@@ -20,7 +20,7 @@ class CampaignMonitorClientTest extends TestCase
         $response = \MailMarketing\Facades\MailMarketing::driver('campaignmonitor')->addList('Foo bar');
 
         $this->assertFalse($response->isSuccess());
-        $this->assertEquals('Must supply a valid HTTP Basic Authorization header', $response->getErrorMessage());
-        $this->assertEquals(50, $response->get('Code'));
+        $this->assertEquals('Invalid API Key', $response->getErrorMessage());
+        $this->assertEquals(100, $response->get('Code'));
     }
 }

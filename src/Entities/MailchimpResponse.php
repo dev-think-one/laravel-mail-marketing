@@ -87,10 +87,10 @@ class MailchimpResponse implements ResponseInterface
     /**
      * @inheritDoc
      */
-    public function get($key = null, $default = null)
+    public function get(?string $key = null, mixed $default = null): mixed
     {
         if (!is_null($key)) {
-            return Arr::get($this->getResponse(), (string)$key, $default);
+            return Arr::get($this->getResponse(), $key, $default);
         }
 
         return $this->getResponse();
