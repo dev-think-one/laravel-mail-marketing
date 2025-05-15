@@ -19,11 +19,7 @@ class TestCase extends Orchestra
 
     protected function defineDatabaseMigrations()
     {
-        $migrator = new MigrateProcessor($this, [
-            '--path'     => __DIR__.'/Fixtures/migrations',
-            '--realpath' => true,
-        ]);
-        $migrator->up();
+        $this->loadMigrationsFrom(__DIR__.'/Fixtures/migrations');
     }
 
     /**
