@@ -7,7 +7,7 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/dev-think-one/laravel-mail-marketing/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/dev-think-one/laravel-mail-marketing/?branch=main)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dev-think-one/laravel-mail-marketing/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/dev-think-one/laravel-mail-marketing/?branch=main)
 
-Simple application layer where you can quickly change your mail marketing service
+Simple application layer where you can quickly change your mail marketing service. Supports PHP 8.1, 8.2 and Laravel 9, 10, 11.
 
 ## Services
 

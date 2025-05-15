@@ -15,12 +15,12 @@ interface ResponseInterface
      * @return static
      * @throws MailMarketingException
      */
-    public static function init($data): static;
+    public static function init(mixed $data): static;
 
     /**
      * @return mixed
      */
-    public function getResponse();
+    public function getResponse(): mixed;
 
     /**
      * Check is response was successful
@@ -37,9 +37,9 @@ interface ResponseInterface
     /**
      * Value or full response
      * @param string|null $key
-     * @param null $default
+     * @param mixed $default
      *
-     * @return mixed|array|string
+     * @return mixed
      */
-    public function get($key = null, $default = null);
+    public function get(?string $key = null, mixed $default = null): mixed;
 }

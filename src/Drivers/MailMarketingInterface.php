@@ -11,7 +11,7 @@ interface MailMarketingInterface
     /**
      * @return mixed
      */
-    public function client(?string $type = null);
+    public function client(?string $type = null): mixed;
 
     /**
      * Create New list
@@ -29,7 +29,7 @@ interface MailMarketingInterface
      * @return ResponseInterface
      * @throws MailMarketingException
      */
-    public function addMembersToList($listId, $members, array $data = []): ResponseInterface;
+    public function addMembersToList(mixed $listId, \ArrayAccess|array $members, array $data = []): ResponseInterface;
 
     /**
      * @param mixed $listId
@@ -38,7 +38,7 @@ interface MailMarketingInterface
      * @return ResponseInterface
      * @throws MailMarketingException
      */
-    public function addMemberToList($listId, $member, array $data = []): ResponseInterface;
+    public function addMemberToList(mixed $listId, \ArrayAccess|array $member, array $data = []): ResponseInterface;
 
     /**
      * @param mixed $listId
@@ -47,7 +47,7 @@ interface MailMarketingInterface
      * @return ResponseInterface
      * @throws MailMarketingException
      */
-    public function removeMemberFromList($listId, $member, array $data = []): ResponseInterface;
+    public function removeMemberFromList(mixed $listId, \ArrayAccess|array $member, array $data = []): ResponseInterface;
 
     /**
      * @param mixed $listId
@@ -56,7 +56,7 @@ interface MailMarketingInterface
      * @return ResponseInterface
      * @throws MailMarketingException
      */
-    public function getMemberInfoForList($listId, string $email): ResponseInterface;
+    public function getMemberInfoForList(mixed $listId, string $email): ResponseInterface;
 
     /**
      * @param mixed $listId
@@ -66,7 +66,7 @@ interface MailMarketingInterface
      * @return ResponseInterface
      * @throws MailMarketingException
      */
-    public function manageMemberTags($listId, string $email, array $tags): ResponseInterface;
+    public function manageMemberTags(mixed $listId, string $email, array $tags): ResponseInterface;
 
     /**
      * @param mixed $listId
@@ -75,5 +75,5 @@ interface MailMarketingInterface
      * @return ResponseInterface
      * @throws MailMarketingException
      */
-    public function getMemberTags($listId, string $email): ResponseInterface;
+    public function getMemberTags(mixed $listId, string $email): ResponseInterface;
 }
